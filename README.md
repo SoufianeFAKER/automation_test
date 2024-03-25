@@ -32,11 +32,11 @@ La solution proposée est "frwTNRWebGherkin" basée sur Selenium webdriver, cucu
 
 # Technologies et Environments 
 
-- Selenium WebDriver Version 2.50.1
-- Cucumber Version 1.2.4
-- Junit Version 4
+- Selenium WebDriver Version 4.18.1
+- Cucumber Version 7.15.0
+- Junit Version 5.8.2
 - ExtentReport Version 3.1.3
-- Eclipse 2019-12
+- Eclipse 2023-12 (4.30.0)
 - JDK Version 1.8
 
 # Synthèse Framework de test auto en BDD
