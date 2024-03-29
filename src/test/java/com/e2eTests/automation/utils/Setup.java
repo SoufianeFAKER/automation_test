@@ -2,6 +2,8 @@ package com.e2eTests.automation.utils;
 
 
 
+import java.time.Duration;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Platform;
@@ -44,8 +46,10 @@ public class Setup {
 
 		case "chrome":
 			ChromeOptions chromeOptions = new ChromeOptions();
-			chromeOptions.addArguments("['start-maximized']");
 			driver = new ChromeDriver(chromeOptions);
+			chromeOptions.addArguments("--start-maximized");
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 			break;
 
 		case "firefox":
