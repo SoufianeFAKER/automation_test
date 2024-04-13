@@ -1,4 +1,4 @@
-@authentification
+@authentification @tnr @smoke
 Feature: Authentification
   ETQ utilisateur je souhaite m'authentifier
 

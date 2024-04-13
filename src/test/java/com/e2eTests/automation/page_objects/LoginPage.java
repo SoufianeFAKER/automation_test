@@ -33,9 +33,11 @@ public class LoginPage extends BasePage {
 		return password;
 	}
 
-	public static WebElement getBtnLogin() {
+	public void clickOnBtnLogin() {	//getBtnLogin() {
+		
+		btnLogin.click();
 
-		return btnLogin;
+		//return btnLogin;
 	}
 
 }

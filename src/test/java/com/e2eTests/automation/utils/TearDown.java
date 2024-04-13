@@ -24,7 +24,7 @@ public class TearDown {
 		}
 		
 		Setup.getDriver().quit();
-		Setup.getLogger().error("Scenario: " + scenario.getName() + "- finished.status" + scenario.getStatus());
+		Setup.getLogger().info("Scenario: " + scenario.getName() + "- finished.status" + scenario.getStatus());
 		
 	}
 

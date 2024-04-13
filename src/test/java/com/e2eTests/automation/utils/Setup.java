@@ -35,7 +35,7 @@ public class Setup {
 	@Before
 	public void setWebDriver(Scenario scenario) {
 		
-		LOGGER.error("Scenario: " + scenario.getName() + "- started");
+		LOGGER.info("Scenario: " + scenario.getName() + "- started");
 		String browser = System.getProperty("browser");
 		if (browser == null) {
 

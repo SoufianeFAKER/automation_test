@@ -16,15 +16,13 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
  * The @CucumberOptions Annotation is used to define the location of feature
  * files, step definitions, reporting integration.
  */
-@CucumberOptions(
-		features = {"src/spec/features"},
-		plugin = {"pretty", "html:target/cucumber-report.html"},
-		tags = ("@gategorieName"),
-		//glue= {"step_definitions"},
-		monochrome = false,
-		snippets = CAMELCASE
-		
-		)
+@CucumberOptions(features = { "src/spec/features" }, 
+		plugin = { "pretty", "html:target/cucumber-report.html" }, 
+		tags = ("@logout"),
+		// glue= {"step_definitions"},
+		monochrome = false, snippets = CAMELCASE
+
+)
 
 /**
  * This class is used to run the test, which is a JUnit Test Runner Class

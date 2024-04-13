@@ -29,6 +29,8 @@ public class ProductNamePage extends BasePage {
 
 		return menuCatalog;
 	}
+	
+	//menuProducts = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[normalize-space()='Products']")))
 
 	public static WebElement getMenuProducts() {
 
