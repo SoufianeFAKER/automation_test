@@ -15,6 +15,15 @@ public class AddNewProductPage extends BasePage {
 	@FindBy(how = How.ID, using = "Name")
 	private static WebElement fieldProductName;
 	
+	@FindBy(how = How.ID, using = "ShortDescription")
+	private static WebElement fieldShortDescription;
+	
+	@FindBy(how = How.ID, using = "SelectedCategoryIds")
+	private static WebElement selectCategories;
+	
+	@FindBy(how = How.ID, using = "ShowOnHomepage")
+	private static WebElement chekBoxShowOnHomepage;
+	
 	@FindBy(how = How.XPATH, using = "//button[@name='save']")
 	private static WebElement btnSave;
 	
@@ -30,6 +39,21 @@ public class AddNewProductPage extends BasePage {
 	public static WebElement getFieldProductName() {
 		
 		return fieldProductName;
+	}
+	
+	public static WebElement getFieldShortDescription() {
+		
+		return fieldShortDescription;
+	}
+	
+	public static WebElement getSelectCategories() {
+		
+		return selectCategories;
+	}
+	
+	public static WebElement getShowOnHomepage() {
+		
+		return chekBoxShowOnHomepage;
 	}
 	
 	public static WebElement getBtnSave() {

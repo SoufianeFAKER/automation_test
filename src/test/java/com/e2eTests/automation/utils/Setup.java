@@ -48,8 +48,8 @@ public class Setup {
 			ChromeOptions chromeOptions = new ChromeOptions();
 			driver = new ChromeDriver(chromeOptions);
 			chromeOptions.addArguments("--start-maximized");
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
 			break;
 
 		case "firefox":

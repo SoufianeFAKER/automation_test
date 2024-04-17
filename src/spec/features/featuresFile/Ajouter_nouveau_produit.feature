@@ -14,5 +14,11 @@ Feature: Ajouter un nouveau produit
     When Je clique sur catalog
     And Je clique sur products
     And Je clique sur add new
-    And Je saisis le nom du nouveau produit "Parfum"
-    And Je clique sur le bouton save
+    And Je remplis les champs suivants
+      | productName      | Book             |
+      | shortDescription | La vie est belle |
+    # | fullDescription  | Auteurs : Roberto Benigni et Vincenzo Cerami |
+    And Je choisis une categorie
+    And Je clique sur show on home page
+    #And Je saisis le nom du nouveau produit "Parfum"
+    #And Je clique sur le bouton save
