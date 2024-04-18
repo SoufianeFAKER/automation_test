@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import com.e2eTests.automation.utils.BasePage;
+import com.e2eTests.automation.utils.SeleniumUtils;
 import com.e2eTests.automation.utils.Setup;
 
 public class LoginPage extends BasePage {
@@ -19,25 +20,28 @@ public class LoginPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//button[@type='submit']")
 	private static WebElement btnLogin;
 	
+	public SeleniumUtils seleniumUtils;
+	
 	public LoginPage() {
 		super(Setup.getDriver());
+		seleniumUtils = new SeleniumUtils();
 	}
 
-	public static WebElement getEmail() {
-
-		return email;
-	}
-
-	public static WebElement getPassword() {
-
-		return password;
-	}
-
-	public void clickOnBtnLogin() {	//getBtnLogin() {
+	public void enterEmail(String emailText) { 
 		
-		btnLogin.click();
+		seleniumUtils.writeText(email, emailText);
 
-		//return btnLogin;
+	}
+
+	public void enterPassword(String passwodText) {
+
+		seleniumUtils.writeText(password, passwodText);
+	}
+
+	public void clickOnBtnLogin() {
+		
+		seleniumUtils.click(btnLogin);
+		
 	}
 
 }

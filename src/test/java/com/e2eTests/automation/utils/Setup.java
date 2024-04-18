@@ -9,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -21,6 +20,7 @@ import io.cucumber.java.Scenario;
 public class Setup { 
 
 	private static WebDriver driver;
+	//public ConfigFileReader configFileReader = new ConfigFileReader();
 	private static final Logger LOGGER = (Logger) LogManager.getLogger(Setup.class.getName());
 	
 	/**
@@ -45,9 +45,10 @@ public class Setup {
 		switch (browser) {
 
 		case "chrome":
-			ChromeOptions chromeOptions = new ChromeOptions();
-			driver = new ChromeDriver(chromeOptions);
-			chromeOptions.addArguments("--start-maximized");
+			//ChromeOptions chromeOptions = new ChromeOptions();
+			driver = new ChromeDriver();
+			//chromeOptions.addArguments("--start-maximized");
+			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
 			break;
@@ -68,7 +69,11 @@ public class Setup {
 		default:
 			throw new IllegalArgumentException("Browser\"" + browser + "\" is not supportes. ");
 		}
+		
+		//driver.get(configFileReader.getProperties("home.url"));
 	}
+	
+	
 	
 	/* GETTER */
 	public static WebDriver getDriver() {

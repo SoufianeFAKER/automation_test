@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import com.e2eTests.automation.utils.BasePage;
+import com.e2eTests.automation.utils.SeleniumUtils;
 import com.e2eTests.automation.utils.Setup;
 
 public class CategoriesNamePage extends BasePage {
@@ -14,19 +15,34 @@ public class CategoriesNamePage extends BasePage {
 
 	@FindBy(how = How.ID, using = "SearchCategoryName")
 	private static WebElement fieldCategoryName;
+	
+	@FindBy(how = How.ID, using = "search-categories")
+	private static WebElement btnSearchCateory;
 
+	public SeleniumUtils seleniumUtils;
+	
 	public CategoriesNamePage() {
+		
 		super(Setup.getDriver());
+		seleniumUtils = new SeleniumUtils();
 	}
 
-	public static WebElement getCategories() {
+	public void clickOnMenuCategories() {
+		
+		seleniumUtils.click(menuCategories);
 
-		return menuCategories;
 	}
 
-	public static WebElement getCategoryName() {
+	public void enterCategoryName(String categoryNameText) { 
+		
+		seleniumUtils.writeText(fieldCategoryName, categoryNameText);
 
-		return fieldCategoryName;
+	}
+	
+	
+	public void clickOnBtnSearchCateory() {
+		
+		seleniumUtils.click(btnSearchCateory);
 	}
 
 }

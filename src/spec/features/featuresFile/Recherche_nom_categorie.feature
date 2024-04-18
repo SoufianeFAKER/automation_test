@@ -14,4 +14,4 @@ Feature: Recherche nom categorie
     And Je clique sur catalog
     And Je clique sur categories
     And Je saisis le nom du categorie "Computers"
-    And Je clique sur le bouton search
+    And Je clique sur le bouton search de la page Categories

@@ -17,7 +17,7 @@ public class LogoutStepDefinition {
 	@When("Je me déconnecte")
 	public void je_me_déconnecte() {
 		
-		LogoutPage.getLinkLogout().click();
+		logoutPage.clickOnLinkLogout();
 	    
 	}
 

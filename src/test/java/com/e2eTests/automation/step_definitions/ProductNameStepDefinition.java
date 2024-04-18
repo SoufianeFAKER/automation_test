@@ -16,26 +16,28 @@ public class ProductNameStepDefinition {
 	@Then("Je clique sur catalog")
 	public void jeCliqueSurCatalog() {
 		
-		ProductNamePage.getMenuCatalog().click();
+		productNamePage.clickOnMenuCatalog();
 
 	}
 
 	@Then("Je clique sur products")
 	public void jeCliqueSurProducts() {
 		
-		ProductNamePage.getMenuProducts().click();
+		productNamePage.clickOnMenuProducts();
 
 	}
 
 	@Then("Je saisis le nom du produit {string}")
-	public void jeSaisisLeNomDuProduit(String fieldproductNameText) {
+	public void jeSaisisLeNomDuProduit(String fieldProductNameText) {
 		
-		ProductNamePage.getFieldProductName().sendKeys(fieldproductNameText);
+		productNamePage.enterProduct(fieldProductNameText);
 
 	}
 
 	@Then("Je clique sur le bouton search")
 	public void jeCliqueSurLeBoutonSearch() {
+		
+		productNamePage.clickOnBtnSearch();
 
 	}
 

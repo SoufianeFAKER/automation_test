@@ -1,4 +1,4 @@
-@product-name
+@search-product
 Feature: Recherche nom produit
   ETQ utilisateur je souhaite chercher le nom du produit
 
@@ -9,7 +9,7 @@ Feature: Recherche nom produit
     And Je clique sur le bouton Login
     Then Je me redirige vers la page home
 
-  @productName
+  @search-product-name
   Scenario: Je souhaite chercher le nom du produit
     And Je clique sur catalog
     And Je clique sur products

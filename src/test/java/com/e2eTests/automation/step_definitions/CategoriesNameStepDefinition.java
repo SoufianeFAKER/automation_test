@@ -17,16 +17,23 @@ public class CategoriesNameStepDefinition {
 	@Then("Je clique sur categories")
 	public void jeCliqueSurCategories() {
 		
-		CategoriesNamePage.getCategories().click();
+		categoriesNamePage.clickOnMenuCategories();
 	    
 	}
 	
 	@Then("Je saisis le nom du categorie {string}")
 	public void jeSaisisLeNomDuCategorie(String fieldCategoryNameText) {
 		
-		CategoriesNamePage.getCategoryName().sendKeys(fieldCategoryNameText);
+		categoriesNamePage.enterCategoryName(fieldCategoryNameText);
 	   
 	}
+
+	@Then("Je clique sur le bouton search de la page Categories")
+	public void jeCliqueSurLeBoutonSearchDeLaPageCategories() {
+	    
+		categoriesNamePage.clickOnBtnSearchCateory();
+	}
+
 
 
 

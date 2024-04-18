@@ -17,6 +17,7 @@ public class LoginStepDefinition {
 
 		loginPage = new LoginPage();
 		configFileReader = new ConfigFileReader();
+		
 	}
 
 	/* login valid */
@@ -24,33 +25,28 @@ public class LoginStepDefinition {
 	@Given("Je visite l'application NopCommerce")
 	public void jeVisiteLApplicationNopCommerce() {
 
-		Setup.getDriver().get(configFileReader.getProperties("home.url"));
+		Setup.getDriver().get(configFileReader.getProperties("home.url"));	
 
 	}
 
 	@When("Je saisis l'adresse mail {string}")
 	public void jeSaisisLAdresseMail(String email) {
 
-		LoginPage.getEmail().clear();
-		LoginPage.getEmail().sendKeys(email);
-		;
+		loginPage.enterEmail(email);
 
 	}
 
 	@When("Je saisis le login {string}")
 	public void jeSaisisLeLogin(String login) {
-
-		LoginPage.getPassword().clear();
-		LoginPage.getPassword().sendKeys(login);
-		;
+		
+		loginPage.enterPassword(login);
 
 	}
 
 	@When("Je clique sur le bouton Login")
 	public void jeCliqueSurLeBoutonLogin() {
 
-		// LoginPage.getBtnLogin().click();
-		loginPage.clickOnBtnLogin(); // getBtnLogin();
+		loginPage.clickOnBtnLogin();
 
 	}
 

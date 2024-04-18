@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import com.e2eTests.automation.utils.BasePage;
+import com.e2eTests.automation.utils.SeleniumUtils;
 import com.e2eTests.automation.utils.Setup;
 
 public class ProductNamePage extends BasePage {
@@ -19,32 +20,40 @@ public class ProductNamePage extends BasePage {
 	private static WebElement fieldProductName;
 
 	@FindBy(how = How.ID, using = "search-products")
-	private static WebElement btnSearch;
+	private static WebElement btnSearchproducts;
 
+	public SeleniumUtils seleniumUtils;
+	
 	public ProductNamePage() {
+		
 		super(Setup.getDriver());
+		seleniumUtils = new SeleniumUtils();
+		
 	}
 
-	public static WebElement getMenuCatalog() {
+	public void clickOnMenuCatalog() { 
 
-		return menuCatalog;
-	}
-	
-	//menuProducts = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[normalize-space()='Products']")))
-
-	public static WebElement getMenuProducts() {
-
-		return menuProducts;
-	}
-
-	public static WebElement getFieldProductName() {
-
-		return fieldProductName;
+		seleniumUtils.click(menuCatalog);
+		
 	}
 	
-	public static WebElement getBtnSearch() {
+	
+	public void clickOnMenuProducts() {
+		
+		seleniumUtils.click(menuProducts);
 
-		return btnSearch;
+	}
+
+	public void enterProduct(String productName) {
+		
+		seleniumUtils.writeText(fieldProductName, productName);
+
+	}
+	
+	public void clickOnBtnSearch() {
+		
+		seleniumUtils.click(btnSearchproducts);
+
 	}
 
 }
