@@ -6,5 +6,10 @@ pipeline {
                 bat 'mvn  clean install' 
             }
         }
+stage('Cucumber') {
+          steps {
+            cucumber '**/*.json'
+          }
+        }
     }
 }
